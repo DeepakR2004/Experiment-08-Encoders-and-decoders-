@@ -56,23 +56,50 @@ D7 = X Y Z
 
 ### Procedure
 /* write all the steps invloved */
-
+/*
+Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
+Developed by: R Deepak
+RegisterNumber: 21222205008 
+*/
 
 
 ### PROGRAM 
-/*
-Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-
+```
+for encoder
+module encoder(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
+```
+for decoder
+module decoder(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+output d0,d1,d2,d3,d4,d5,d6,d7;
+input a,b,c;
+assign d0=(~a & ~b & ~c);
+assign d1=(~a & ~b & c);
+assign d2=(~a & b & ~c);
+assign d3=(~a & b & c);
+assign d4=(a & ~b & ~c);
+assign d5=(a & ~b & c);
+assign d6=(a & b & ~c);
+assign d7=(a & b & c);
+endmodule
+```
 
 
 
 
 
 ### RTL LOGIC  
+for encoder
+![encoderrtl](https://github.com/DeepakR2004/Experiment-08-Encoders-and-decoders-/assets/131233950/f0ac04e0-f812-441b-997a-e30b8dd13492)
 
+for decoder
+![decoderrtl](https://github.com/DeepakR2004/Experiment-08-Encoders-and-decoders-/assets/131233950/1e0a48aa-314e-4c05-9e3b-c502f4e43014)
 
 
 
@@ -81,16 +108,28 @@ RegisterNumber:
 
 
 ### TIMING DIGRAMS  
+for encoder
+![enodertd](https://github.com/DeepakR2004/Experiment-08-Encoders-and-decoders-/assets/131233950/4d4e5e99-fca3-4e84-9316-d6cc646a826f)
+
+for decoder
+![decoder td](https://github.com/DeepakR2004/Experiment-08-Encoders-and-decoders-/assets/131233950/46cad8e4-e9d1-4d10-b205-670d46f83547)
 
 
 
 
 
 ### TRUTH TABLE 
+for encoder
+![encoder](https://github.com/DeepakR2004/Experiment-08-Encoders-and-decoders-/assets/131233950/f7134005-4b29-4f23-bf56-c37b41b046da)
 
+
+for decoder
+
+![decoder](https://github.com/DeepakR2004/Experiment-08-Encoders-and-decoders-/assets/131233950/c85c6022-dc82-4e54-b0bd-d309f40ff642)
 
 
 
 
 
 ### RESULTS 
+the encoder and decoder are verified
